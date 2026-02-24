@@ -1,0 +1,10 @@
+name: prototype-shinyidea
+title:
+username: guofang1028
+account: guofang1028
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16747585
+bundleId: 11621953
+url: https://guofang1028.shinyapps.io/prototype-shinyidea/
+version: 1

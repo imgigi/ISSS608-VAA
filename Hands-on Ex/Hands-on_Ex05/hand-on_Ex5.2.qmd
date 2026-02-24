@@ -1,6 +1,6 @@
 ---
 title: "Visual Correlation Analysis"
-author: "guofang ji"
+author: "Guofang Ji"
 format: html
 execute: 
   echo: true
@@ -26,7 +26,7 @@ When the data is large, both in terms of the number of observations and the numb
 -   Rendering the value of a correlation to depict its sign and magnitude, and
 -   Reordering the variables in a correlation matrix so that "similar" variables are positioned adjacently, facilitating perception.
 
-In this hands-on exercise, we will explore how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, we will create correlation matrix using [*pairs()*](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs) of R Graphics. Next, we will plot corrgram using **corrplot** package of R. Lastly, we will create an interactive correlation matrix using plotly R.
+In this hands-on exercise, I explored how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, I created correlation matrix using [*pairs()*](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs) of R Graphics. Next, I plotted corrgram using **corrplot** package of R. Lastly, I created an interactive correlation matrix using plotly R.
 
 ## Installing and Launching R Packages
 
@@ -52,7 +52,7 @@ Notice that beside quality and type, the rest of the variables are numerical and
 
 ## Building Correlation Matrix: *pairs()* method
 
-There are more than one way to build scatterplot matrix with R. In this section, we will create a scatterplot matrix by using the *pairs* function of R Graphics.
+There are more than one way to build scatterplot matrix with R. In this section, I created a scatterplot matrix by using the *pairs* function of R Graphics.
 
 Before continuing to the next step, it's helpful to read the syntax description of [*pairs*](https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/pairs.html) function.
 
@@ -120,7 +120,7 @@ There are at least three R packages that provide functions to plot corrgram:
 
 In addition, some R packages like ggstatsplot package also provide functions for building corrgram.
 
-In this section, we will visualise correlation matrix by using [*ggcorrmat()*](https://indrajeetpatil.github.io/ggstatsplot/reference/ggcorrmat.html) of [**ggstatsplot**](https://indrajeetpatil.github.io/ggstatsplot/index.html) package.
+In this section, I visualised correlation matrix by using [*ggcorrmat()*](https://indrajeetpatil.github.io/ggstatsplot/reference/ggcorrmat.html) of [**ggstatsplot**](https://indrajeetpatil.github.io/ggstatsplot/index.html) package.
 
 ### The basic plot
 

@@ -1,13 +1,13 @@
 ---
 title: "Hands-on_Ex05.1"
-author: "guofang ji"
+author: "Guofang Ji"
 ---
 
 ## Overview
 
 Ternary plots are a visualization method designed to display the distribution and variability of three-part compositional data. For example, they can show the proportions of elderly, economically active, and young populations, or the proportions of sand, silt, and clay in soil. Ternary plots are displayed as triangles, with the three sides scaled from 0 to 1, each side representing one of the three components. Points are plotted such that perpendicular lines from the point to each side of the triangle intersect at the component values.
 
-In this exercise, we will learn how to use R programming to build ternary plots to visualize and analyze Singapore's population structure.
+In this exercise, I learned how to use R programming to build ternary plots to visualize and analyze Singapore's population structure.
 
 This exercise consists of four steps:
 
@@ -37,7 +37,7 @@ This exercise will use the [Singapore Resident Population by Planning Area, Subz
 
 ### Importing Data
 
-To import *respopagsex2000to2018_tidy.csv* into R, we will use the ***read_csv()*** function of the **readr** package.
+To import *respopagsex2000to2018_tidy.csv* into R, I used the ***read_csv()*** function of the **readr** package.
 
 ```{r, echo=TRUE}
 #Reading the data into R environment

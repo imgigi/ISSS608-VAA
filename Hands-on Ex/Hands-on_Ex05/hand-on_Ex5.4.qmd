@@ -1,6 +1,6 @@
 ---
 title: "Visual Multivariate Analysis with Parallel Coordinates Plot"
-author: "guofang ji"
+author: "Guofang Ji"
 format: html
 execute: 
   echo: true
@@ -12,7 +12,7 @@ execute:
 
 Parallel coordinates plot is a data visualisation specially designed for visualising and analysing multivariate, numerical data. It is ideal for comparing multiple variables together and seeing the relationships between them. For example, the variables contribute to Happiness Index. Parallel coordinates was invented by [Alfred Inselberg](http://www.math.tau.ac.il/~aiisreal/) in the 1970s as a way to visualize high-dimensional data. This data visualisation technique is more often found in academic and scientific communities than in business and consumer data visualizations. As pointed out by [Stephen Few](https://www.perceptualedge.com/articles/b-eye/parallel_coordinates.pdf)(2006), "This certainly isn't a chart that you would present to the board of directors or place on your Web site for the general public. In fact, the strength of parallel coordinates isn't in their ability to communicate some truth in the data to others, but rather in their ability to bring meaningful multivariate patterns and comparisons to light when used interactively for analysis." For example, parallel coordinates plot can be used to characterise clusters detected during customer segmentation.
 
-By the end of this hands-on exercise, you will gain hands-on experience on:
+By the end of this hands-on exercise, I gained hands-on experience on:
 
 -   plotting statistic parallel coordinates plots by using [`ggparcoord()`](https://ggobi.github.io/ggally/reference/ggparcoord.html) of [**GGally**]() package, and
 -   plotting interactive parallel coordinates plots by using [**parallelPlot**](https://cran.r-project.org/web/packages/parallelPlot/) package.
@@ -39,7 +39,7 @@ wh <- read_csv("Data/WHData-2018.csv")
 
 ## Plotting Static Parallel Coordinates Plot
 
-In this section, you will learn how to plot static parallel coordinates plot by using [`ggparcoord()`](https://ggobi.github.io/ggally/reference/ggparcoord.html) of **GGally** package. Before getting started, it is a good practice to read the function description in detail.
+In this section, I learned how to plot static parallel coordinates plot by using [`ggparcoord()`](https://ggobi.github.io/ggally/reference/ggparcoord.html) of **GGally** package. Before getting started, it is a good practice to read the function description in detail.
 
 ### Plotting a simple parallel coordinates
 
@@ -56,7 +56,7 @@ Notice that only two argument namely `data` and `columns` is used. `Data` argume
 
 ### Plotting a parallel coordinates with boxplot
 
-The basic parallel coordinates failed to reveal any meaning understanding of the World Happiness measures. In this section, you will learn how to makeover the plot by using a collection of arguments provided by `ggparcoord()`.
+The basic parallel coordinates failed to reveal any meaning understanding of the World Happiness measures. In this section, I learned how to makeover the plot by using a collection of arguments provided by `ggparcoord()`.
 
 ```{r}
 #| fig-width: 13
@@ -147,7 +147,7 @@ parallelPlot(wh,
              height = 250)
 ```
 
-Notice that some of the axis labels are too long. You will learn how to overcome this problem in the next step.
+Notice that some of the axis labels are too long. I learned how to overcome this problem in the next step.
 
 ### Rotate axis label
 

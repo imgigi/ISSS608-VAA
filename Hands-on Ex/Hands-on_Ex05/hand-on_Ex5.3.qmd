@@ -1,6 +1,6 @@
 ---
 title: "Heatmap for Visualising and Analysing Multivariate Data"
-author: "guofang ji"
+author: "Guofang Ji"
 format: html
 execute: 
   echo: true
@@ -13,7 +13,7 @@ execute:
 
 Heatmaps visualise data through variations in colouring. When applied to a tabular format, heatmaps are useful for cross-examining multivariate data, through placing variables in the columns and observation (or records) in rowa and colouring the cells within the table. Heatmaps are good for showing variance across multiple variables, revealing any patterns, displaying whether any variables are similar to each other, and for detecting if any correlations exist in-between them.
 
-In this hands-on exercise, you will gain hands-on experience on using R to plot static and interactive heatmap for visualising and analysing multivariate data.
+In this hands-on exercise, I gained hands-on experience on using R to plot static and interactive heatmap for visualising and analysing multivariate data.
 
 ## Installing and Launching R Packages
 
@@ -70,11 +70,11 @@ There are many R packages and functions can be used to drawing static heatmaps, 
 -   [**ComplexHeatmap**](https://bioconductor.org/packages/release/bioc/html/ComplexHeatmap.html) package of R/Bioconductor package. The package draws, annotates and arranges complex heatmaps (very useful for genomic data analysis). The full reference guide of the package is available [here](https://jokergoo.github.io/ComplexHeatmap-reference/book/).
 -   [**superheat**](https://cran.r-project.org/web/packages/superheat/) package: A Graphical Tool for Exploring Complex Datasets Using Heatmaps. A system for generating extendable and customizable heatmaps for exploring complex datasets, including big data and data with multiple data types. The full reference guide of the package is available [here](https://rlbarter.github.io/superheat/).
 
-In this section, you will learn how to plot static heatmaps by using **heatmap()** of *R Stats* package.
+In this section, I learned how to plot static heatmaps by using **heatmap()** of *R Stats* package.
 
 ### heatmap() of R Stats
 
-In this sub-section, we will plot a heatmap by using *heatmap()* of Base Stats. The code chunk is given below.
+In this sub-section, I plotted a heatmap by using *heatmap()* of Base Stats. The code chunk is given below.
 
 ```{r}
 #| fig-height: 5
@@ -115,9 +115,9 @@ Notice that the values are scaled now. Also note that **margins** argument is us
 
 [**heatmaply**](http://talgalili.github.io/heatmaply/index.html) is an R package for building interactive cluster heatmap that can be shared online as a stand-alone HTML file. It is designed and maintained by Tal Galili.
 
-Before we get started, you should review the [Introduction to Heatmaply](https://cran.r-project.org/web/packages/heatmaply/vignettes/heatmaply.html) to have an overall understanding of the features and functions of Heatmaply package. You are also required to have the [user manual](https://cran.r-project.org/web/packages/heatmaply/heatmaply.pdf)of the package handy with you for reference purposes.
+Before getting started, I reviewed the [Introduction to Heatmaply](https://cran.r-project.org/web/packages/heatmaply/vignettes/heatmaply.html) to have an overall understanding of the features and functions of Heatmaply package. I also had the [user manual](https://cran.r-project.org/web/packages/heatmaply/heatmaply.pdf) of the package handy for reference purposes.
 
-In this section, you will gain hands-on experience on using **heatmaply** to design an interactive cluster heatmap. We will still use the wh_matrix as the input data.
+In this section, I gained hands-on experience on using **heatmaply** to design an interactive cluster heatmap. We will still use the wh_matrix as the input data.
 
 ### Working with **heatmaply**
 

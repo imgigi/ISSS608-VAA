@@ -1,0 +1,12 @@
+name: demo
+title: demo
+username: guofang1028
+account: guofang1028
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16747640
+bundleId: 11621979
+url: https://guofang1028.shinyapps.io/demo/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

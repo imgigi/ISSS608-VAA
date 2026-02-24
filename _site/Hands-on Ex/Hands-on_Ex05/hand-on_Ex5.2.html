@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="guofang ji">
+<meta name="author" content="Guofang Ji">
 
 <title>Visual Correlation Analysis – ISSS608-VAA</title>
 <style>
@@ -182,6 +182,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../../Hands-on Ex/Hands-on_Ex05/hand-on_Ex5.5.html">
  <span class="dropdown-text">Hands-on Exercise 5.5</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../Hands-on Ex/Hands-on_Ex07/hand-on_Ex7.html">
+ <span class="dropdown-text">Hands-on Exercise 7</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -263,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>guofang ji </p>
+             <p>Guofang Ji </p>
           </div>
   </div>
     
@@ -291,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Rendering the value of a correlation to depict its sign and magnitude, and</li>
 <li>Reordering the variables in a correlation matrix so that “similar” variables are positioned adjacently, facilitating perception.</li>
 </ul>
-<p>In this hands-on exercise, we will explore how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, we will create correlation matrix using <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs"><em>pairs()</em></a> of R Graphics. Next, we will plot corrgram using <strong>corrplot</strong> package of R. Lastly, we will create an interactive correlation matrix using plotly R.</p>
+<p>In this hands-on exercise, I explored how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, I created correlation matrix using <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs"><em>pairs()</em></a> of R Graphics. Next, I plotted corrgram using <strong>corrplot</strong> package of R. Lastly, I created an interactive correlation matrix using plotly R.</p>
 </section>
 <section id="installing-and-launching-r-packages" class="level2">
 <h2 class="anchored" data-anchor-id="installing-and-launching-r-packages">Installing and Launching R Packages</h2>
@@ -314,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="building-correlation-matrix-pairs-method" class="level2">
 <h2 class="anchored" data-anchor-id="building-correlation-matrix-pairs-method">Building Correlation Matrix: <em>pairs()</em> method</h2>
-<p>There are more than one way to build scatterplot matrix with R. In this section, we will create a scatterplot matrix by using the <em>pairs</em> function of R Graphics.</p>
+<p>There are more than one way to build scatterplot matrix with R. In this section, I created a scatterplot matrix by using the <em>pairs</em> function of R Graphics.</p>
 <p>Before continuing to the next step, it’s helpful to read the syntax description of <a href="https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/pairs.html"><em>pairs</em></a> function.</p>
 <section id="building-a-basic-correlation-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="building-a-basic-correlation-matrix">Building a basic correlation matrix</h3>
@@ -405,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://cran.r-project.org/web/packages/corrplot/index.html">corrplot</a></li>
 </ul>
 <p>In addition, some R packages like ggstatsplot package also provide functions for building corrgram.</p>
-<p>In this section, we will visualise correlation matrix by using <a href="https://indrajeetpatil.github.io/ggstatsplot/reference/ggcorrmat.html"><em>ggcorrmat()</em></a> of <a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><strong>ggstatsplot</strong></a> package.</p>
+<p>In this section, I visualised correlation matrix by using <a href="https://indrajeetpatil.github.io/ggstatsplot/reference/ggcorrmat.html"><em>ggcorrmat()</em></a> of <a href="https://indrajeetpatil.github.io/ggstatsplot/index.html"><strong>ggstatsplot</strong></a> package.</p>
 <section id="the-basic-plot" class="level3">
 <h3 class="anchored" data-anchor-id="the-basic-plot">The basic plot</h3>
 <p>One of the advantages of using <em>ggcorrmat()</em> over many other methods to visualise a correlation matrix is its ability to provide a comprehensive and yet professional statistical report as shown in the figure below.</p>

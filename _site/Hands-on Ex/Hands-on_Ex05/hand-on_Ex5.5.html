@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="guofang ji">
+<meta name="author" content="Guofang Ji">
 
 <title>Treemap Visualisation with R – ISSS608-VAA</title>
 <style>
@@ -182,6 +182,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../../Hands-on Ex/Hands-on_Ex05/hand-on_Ex5.5.html">
  <span class="dropdown-text">Hands-on Exercise 5.5</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../Hands-on Ex/Hands-on_Ex07/hand-on_Ex7.html">
+ <span class="dropdown-text">Hands-on Exercise 7</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -263,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>guofang ji </p>
+             <p>Guofang Ji </p>
           </div>
   </div>
     
@@ -278,11 +282,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this hands-on exercise, you will gain hands-on experiences on designing treemap using appropriate R packages. The hands-on exercise consists of three main section. First, you will learn how to manipulate transaction data into a treemap strcuture by using selected functions provided in <strong>dplyr</strong> package. Then, you will learn how to plot static treemap by using <strong>treemap</strong> package. In the third section, you will learn how to design interactive treemap by using <strong>d3treeR</strong> package.</p>
+<p>In this hands-on exercise, I gained hands-on experiences on designing treemap using appropriate R packages. The hands-on exercise consists of three main section. First, I learned how to manipulate transaction data into a treemap strcuture by using selected functions provided in <strong>dplyr</strong> package. Then, I learned how to plot static treemap by using <strong>treemap</strong> package. In the third section, I learned how to design interactive treemap by using <strong>d3treeR</strong> package.</p>
 </section>
 <section id="installing-and-launching-r-packages" class="level2">
 <h2 class="anchored" data-anchor-id="installing-and-launching-r-packages">Installing and Launching R Packages</h2>
-<p>Before we get started, you are required to check if <strong>treemap</strong> and <strong>tidyverse</strong> pacakges have been installed in you R.</p>
+<p>Before getting started, I checked if <strong>treemap</strong> and <strong>tidyverse</strong> pacakges have been installed in R.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(treemap, treemapify, tidyverse) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -300,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-wrangling-and-manipulation" class="level3">
 <h3 class="anchored" data-anchor-id="data-wrangling-and-manipulation">Data Wrangling and Manipulation</h3>
-<p>The data.frame <em>realis2018</em> is in trasaction record form, which is highly disaggregated and not appropriate to be used to plot a treemap. In this section, we will perform the following steps to manipulate and prepare a data.frtame that is appropriate for treemap visualisation:</p>
+<p>The data.frame <em>realis2018</em> is in trasaction record form, which is highly disaggregated and not appropriate to be used to plot a treemap. In this section, I performed the following steps to manipulate and prepare a data.frtame that is appropriate for treemap visualisation:</p>
 <ul>
 <li>group transaction records by <em>Project Name</em>, <em>Planning Region</em>, <em>Planning Area</em>, <em>Property Type</em> and <em>Type of Sale</em>, and</li>
 <li>compute <em>Total Unit Sold</em>, <em>Total Area</em>, <em>Median Unit Price</em> and <em>Median Transacted Price</em> by applying appropriate summary statistics on <em>No.&nbsp;of Units</em>, <em>Area (sqm)</em>, <em>Unit Price ($ psm)</em> and <em>Transacted Price ($)</em> respectively.</li>
@@ -390,11 +394,11 @@ Note
 </section>
 <section id="designing-treemap-with-treemap-package" class="level2">
 <h2 class="anchored" data-anchor-id="designing-treemap-with-treemap-package">Designing Treemap with treemap Package</h2>
-<p><strong>treemap</strong> package is a R package specially designed to offer great flexibility in drawing treemaps. The core function, namely: <em>treemap()</em> offers at least 43 arguments. In this section, we will only explore the major arguments for designing elegent and yet truthful treemaps.</p>
+<p><strong>treemap</strong> package is a R package specially designed to offer great flexibility in drawing treemaps. The core function, namely: <em>treemap()</em> offers at least 43 arguments. In this section, I explored the major arguments for designing elegent and yet truthful treemaps.</p>
 <section id="designing-a-static-treemap" class="level3">
 <h3 class="anchored" data-anchor-id="designing-a-static-treemap">Designing a static treemap</h3>
 <p>In this section, <em>treemap()</em> of <strong>Treemap</strong> package is used to plot a treemap showing the distribution of median unit prices and total unit sold of resale condominium by geographic hierarchy in 2017.</p>
-<p>First, we will select records belongs to resale condominium property type from <em>realis2018_selected</em> data frame.</p>
+<p>First, I selected records belongs to resale condominium property type from <em>realis2018_selected</em> data frame.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>realis2018_selected <span class="ot">&lt;-</span> realis2018_summarised <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Property Type</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"Condominium"</span>, <span class="st">`</span><span class="at">Type of Sale</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"Resale"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -594,7 +598,7 @@ Note
 </section>
 <section id="designing-treemap-using-treemapify-package" class="level2">
 <h2 class="anchored" data-anchor-id="designing-treemap-using-treemapify-package">Designing Treemap using <strong>treemapify</strong> Package</h2>
-<p><strong>treemapify</strong> is a R package specially developed to draw treemaps in <strong>ggplot2</strong>. In this section, you will learn how to designing treemps closely resemble treemaps designing in previous section by using <strong>treemapify</strong>. Before you getting started, you should read <a href="https://cran.r-project.org/web/packages/treemapify/vignettes/introduction-to-treemapify.html">Introduction to “treemapify”</a> its <a href="https://cran.r-project.org/web/packages/treemapify/treemapify.pdf">user guide</a>.</p>
+<p><strong>treemapify</strong> is a R package specially developed to draw treemaps in <strong>ggplot2</strong>. In this section, I learned how to designing treemps closely resemble treemaps designing in previous section by using <strong>treemapify</strong>. Before getting started, I read <a href="https://cran.r-project.org/web/packages/treemapify/vignettes/introduction-to-treemapify.html">Introduction to “treemapify”</a> its <a href="https://cran.r-project.org/web/packages/treemapify/treemapify.pdf">user guide</a>.</p>
 <section id="designing-a-basic-treemap" class="level3">
 <h3 class="anchored" data-anchor-id="designing-a-basic-treemap">Designing a basic treemap</h3>
 <div class="cell">
@@ -675,20 +679,20 @@ Note
 <h3 class="anchored" data-anchor-id="installing-d3treer-package">Installing <em>d3treeR</em> package</h3>
 <p>This slide shows you how to install a R package which is not available in cran.</p>
 <ol type="1">
-<li>If this is the first time you install a package from github, you should install <em>devtools</em> package by using the code below or else you can skip this step.</li>
+<li>Since this was the first time I installed a package from github, I installed the <em>devtools</em> package by using the code below.</li>
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
-<li>Next, you will load the <em>devtools</em> library and install the package found in github by using the codes below.</li>
+<li>Next, I loaded the <em>devtools</em> library and installed the package found in github by using the codes below.</li>
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"timelyportfolio/d3treeR"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
-<li>Now you are ready to launch <em>d3treeR</em> package</li>
+<li>Now I was ready to launch <em>d3treeR</em> package</li>
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(d3treeR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

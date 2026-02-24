@@ -12,11 +12,11 @@ format:
 
 ## 3.1 Learning Outcome
 
-In this hands-on exercise, you will learn how to create interactive data visualisation by using functions provided by **ggiraph** and **plotlyr** packages.
+In this hands-on exercise, I learned how to create interactive data visualisation by using functions provided by **ggiraph** and **plotlyr** packages.
 
 ## 3.2 Getting Started
 
-First, write a code chunk to check, install and launch the following R packages:
+I checked, installed and launched the following R packages:
 
 ```{r}
 pacman::p_load(ggiraph, plotly, patchwork, DT, tidyverse)

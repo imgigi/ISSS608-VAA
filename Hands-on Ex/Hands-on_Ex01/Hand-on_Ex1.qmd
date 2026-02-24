@@ -50,7 +50,7 @@ ggplot(data = exam_data,
 ```
 :::
 
-As you can see that the code chunk is relatively simple if R Graphics is used.
+As shown, the code chunk is relatively simple when R Graphics is used.
 
 # A Layered Grammar of Graphics
 

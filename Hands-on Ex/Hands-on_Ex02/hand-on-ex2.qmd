@@ -318,7 +318,7 @@ p2 <- ggplot(data = exam_data,
 ```
 :::
 
-Lastly, we will draw a scatterplot for English score versus Maths score by as shown below
+Lastly, I drew a scatterplot for English score versus Maths score as shown below
 
 ::: panel-tabset
 ## The plot
