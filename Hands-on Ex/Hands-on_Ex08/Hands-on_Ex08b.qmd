@@ -1,0 +1,158 @@
+---
+title: "Visualising Geospatial Point Data"
+author: "Guofang Ji"
+date: "March 6, 2026"
+date-modified: "`r Sys.Date()`"
+format: html
+execute:
+  echo: true
+  eval: true
+  warning: false
+  freeze: true
+editor: visual
+---
+
+## Overview
+
+In this hands-on exercise, I learned how to create proportional symbol maps (also known as graduated symbol maps) showing the number of wins by Singapore Pools' outlets using the **tmap** package. Proportional symbol maps use the visual variable of size to represent differences in the magnitude of a discrete, abruptly changing phenomenon, e.g. counts of people.
+
+By the end of this hands-on exercise, I acquired the following skills:
+
+-   Importing an aspatial data file into R.
+-   Converting it into a simple point feature data frame and assigning an appropriate projection reference.
+-   Plotting interactive proportional symbol maps.
+
+## Getting Started
+
+I loaded the required R packages: **sf**, **tmap** and **tidyverse**.
+
+```{r}
+pacman::p_load(sf, tmap, tidyverse)
+```
+
+## Geospatial Data Wrangling
+
+### The data
+
+The data set used for this hands-on exercise is called *SGPools_svy21*. The data is in csv file format. It consists of seven columns. The XCOORD and YCOORD columns are the x-coordinates and y-coordinates of SingPools outlets and branches in [Singapore SVY21 Projected Coordinates System](https://www.sla.gov.sg/sirent/CoordinateSystems.aspx).
+
+### Data Import and Preparation
+
+I used *read_csv()* function of **readr** package to import *SGPools_svy21.csv* into R as a tibble data frame called *sgpools*.
+
+```{r}
+sgpools <- read_csv("data/SGPools_svy21.csv")
+```
+
+After importing the data file, I examined the data using *list()*.
+
+```{r}
+list(sgpools)
+```
+
+Notice that the *sgpools* data is in tibble data frame format.
+
+### Creating a **sf** data frame from an aspatial data frame
+
+I converted the sgpools data frame into a simple feature data frame by using *st_as_sf()* of **sf** package.
+
+```{r}
+sgpools_sf <- st_as_sf(sgpools,
+                       coords = c("XCOORD", "YCOORD"),
+                       crs= 3414)
+```
+
+::: callout-note
+-   The *coords* argument requires the column name of the x-coordinates first, followed by the column name of the y-coordinates.
+-   The *crs* argument requires the coordinates system in epsg format. [EPSG: 3414](https://epsg.io/3414) is Singapore SVY21 Projected Coordinate System.
+:::
+
+I displayed the basic information of the newly created sgpools_sf below. Notice that a new column called geometry has been added into the data frame, and the epsg ID is 3414.
+
+```{r}
+list(sgpools_sf)
+```
+
+## Drawing Proportional Symbol Map
+
+To create an interactive proportional symbol map in R, I used the view mode of tmap.
+
+```{r}
+tmap_mode("view")
+```
+
+### An interactive point symbol map
+
+I created an interactive point symbol map using the code chunk below.
+
+```{r}
+tm_shape(sgpools_sf) +
+  tm_bubbles(fill = "red",
+           size = 1,
+           col = "black",
+           lwd = 1)
+```
+
+### Making it proportional
+
+To draw a proportional symbol map, I assigned the numerical variable *Gp1Gp2 Winnings* to the size visual attribute.
+
+```{r}
+tm_shape(sgpools_sf) +
+  tm_bubbles(fill = "red",
+             size = "Gp1Gp2 Winnings",
+             col = "black",
+             lwd = 1)
+```
+
+### Giving it a different colour
+
+I further improved the proportional symbol map by using the colour visual attribute. Here, the *OUTLET TYPE* variable is used as the colour attribute variable.
+
+```{r}
+tm_shape(sgpools_sf) +
+  tm_bubbles(fill = "OUTLET TYPE",
+             size = "Gp1Gp2 Winnings",
+             col = "black",
+             lwd = 1)
+```
+
+### Faceted proportional symbol maps
+
+An impressive feature of **tmap**'s view mode is that it also works with faceted plots. The argument *sync* in *tm_facets()* can be used to produce multiple maps with synchronised zoom and pan settings.
+
+```{r}
+tm_shape(sgpools_sf) +
+  tm_bubbles(fill = "OUTLET TYPE",
+             size = "Gp1Gp2 Winnings",
+             col = "black",
+             lwd = 1) +
+  tm_facets(by= "OUTLET TYPE",
+            nrow = 1,
+            sync = TRUE)
+```
+
+Before ending the session, I switched **tmap**'s Viewer back to plot mode.
+
+```{r}
+tmap_mode("plot")
+```
+
+## Reference
+
+### All about **tmap** package
+
+-   [tmap: Thematic Maps in R](https://www.jstatsoft.org/article/view/v084i06)
+-   [tmap](https://cran.r-project.org/web/packages/tmap/index.html)
+-   [tmap: get started!](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html)
+-   [tmap: changes in version 2.0](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-changes-v2.html)
+
+### Geospatial data wrangling
+
+-   [sf: Simple Features for R](https://cran.r-project.org/web/packages/sf/index.html)
+-   [Simple Features for R: Standardized Support for Spatial Vector Data](https://journal.r-project.org/archive/2018/RJ-2018-009/RJ-2018-009.pdf)
+
+### Data wrangling
+
+-   [dplyr](https://dplyr.tidyverse.org/)
+-   [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
