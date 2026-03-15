@@ -43,13 +43,20 @@ website:
             href: "Hands-on Ex/Hands-on_Ex08/Hands-on_Ex08c.html"
           - text: "Hands-on Exercise 9"
             href: "Hands-on Ex/Hands-on_Ex09/Hands-on_Ex09.html"
-      - text: "Take-home Ex 1"
-        href: "Take-home Ex/TH_EX1/TH_EX1.html"
+      - text: "Take-home Exercise"
+        menu:
+          - text: "Take-home Exercise 1"
+            href: "Take-home Ex/TH_EX1/TH_EX1.html"
+          - text: "Take-home Exercise 2"
+            href: "Take-home Ex/TH_EX2/Take-home_Ex02.html"
     right:
       - text: Home
         href: index.qmd
       - text: About
         href: about.qmd
+
+execute:
+  freeze: auto
 
 format:
   html:
